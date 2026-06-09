@@ -1,0 +1,11 @@
+theia@theiadocker-shawn123:/home/project/final_project$ python3 test_emotion_detection.py
+Dominant emotion for joy test: joy
+Dominant emotion for anger test: anger
+Dominant emotion for disgust test: disgust
+Dominant emotion for sadness test: sadness
+Dominant emotion for fear test: fear
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.618s
+
+OK
