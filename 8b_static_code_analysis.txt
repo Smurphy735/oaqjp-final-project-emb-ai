@@ -1,0 +1,52 @@
+theia@theiadocker-shawn123:/home/project/final_project$ pylint server.py
+************* Module server
+server.py:2:49: C0303: Trailing whitespace (trailing-whitespace)
+server.py:16:0: C0303: Trailing whitespace (trailing-whitespace)
+server.py:22:0: C0301: Line too long (131/100) (line-too-long)
+server.py:25:15: C0303: Trailing whitespace (trailing-whitespace)
+server.py:26:24: C0303: Trailing whitespace (trailing-whitespace)
+server.py:31:0: C0304: Final newline missing (missing-final-newline)
+server.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+server.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
+server.py:26:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+-----------------------------------
+Your code has been rated at 3.57/10
+
+theia@theiadocker-shawn123:/home/project/final_project$ pylint server.py
+************* Module server
+server.py:28:0: C0301: Line too long (131/100) (line-too-long)
+
+------------------------------------------------------------------
+Your code has been rated at 9.29/10 (previous run: 3.57/10, +5.71)
+
+theia@theiadocker-shawn123:/home/project/final_project$ pylint server.py
+************* Module server
+server.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
+
+------------------------------------------------------------------
+Your code has been rated at 9.29/10 (previous run: 9.29/10, +0.00)
+
+theia@theiadocker-shawn123:/home/project/final_project$ pylint server.py
+************* Module server
+server.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
+
+------------------------------------------------------------------
+Your code has been rated at 9.29/10 (previous run: 9.29/10, +0.00)
+
+theia@theiadocker-shawn123:/home/project/final_project$ pylint server.py
+************* Module server
+server.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
+
+------------------------------------------------------------------
+Your code has been rated at 9.29/10 (previous run: 9.29/10, +0.00)
+
+theia@theiadocker-shawn123:/home/project/final_project$ pylint server.py
+
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 9.29/10, +0.71)
+
+theia@theiadocker-shawn123:/home/project/final_project$ pylint server.py
+
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 9.29/10, +0.71)
