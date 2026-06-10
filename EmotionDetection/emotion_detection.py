@@ -1,36 +1,37 @@
-import requests  # Import the requests library to handle HTTP requests
-import json # Import the JSON Library
+import requests
+import json
 
-# Define a function named sentiment_analyzer that takes a string input (text_to_analyse)
-def emotion_detector(text_to_analyse):  
-    
-    # URL of the emotion detection service
-    url = 'https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'  
-    
-    # Create a dictionary with the text to be analyzed
+def emotion_detector(text_to_analyse):
+    url = 'https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'
     myobj = {
         "raw_document": {
             "text": text_to_analyse
         }
-    }  
-
-    # Set the headers required for the API request
+    }
     header = {
         "grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"
-    }  
-
+    }
     response = requests.post(url, json=myobj, headers=header)
-    response.raise_for_status()  # Optional: raise error if request fails
+    
+    print(f"HTTP Status Code: {response.status_code}")  # Debug print
 
-    # Parse the JSON response text to a dictionary
+    if response.status_code == 400:
+        # Return dictionary with all values as "none"
+        return {
+            'anger': "none",
+            'disgust': "none",
+            'fear': "none",
+            'joy': "none",
+            'sadness': "none",
+            'dominant_emotion': None
+        }
+
+    response.raise_for_status()  # Raise error for other bad statuses
+
     data = json.loads(response.text)
-    
-    # Extract emotion scores
     emotions = data['emotionPredictions'][0]['emotion']
-    
-    # Find dominant emotion (emotion with highest score)
     dominant_emotion = max(emotions, key=emotions.get)
-    # Prepare the output dictionary
+
     output = {
         'anger': emotions.get('anger', 0),
         'disgust': emotions.get('disgust', 0),
@@ -39,4 +40,5 @@ def emotion_detector(text_to_analyse):
         'sadness': emotions.get('sadness', 0),
         'dominant_emotion': dominant_emotion
     }
+
     return output
